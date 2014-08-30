@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="../../dist/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
+
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block" >
+        <div class="list-block">
+          <h2 id="panel-project-name" style='color:#FFA600'>Project</h2>
+          <div style='color:#FFA600' class="content-block-title">Pathways</div>
+          <ul id="pathway-list">
+            <li style='background-color:#000; color:#FFA600; border-color:#FFA600;'><a id="pathway" href="#" class="item-link close-panel">
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">Services</div>
+                  </div>
+                </div></a></li>
+          </ul>
+        </div>
+        
+        <p><a href="#" id="pathway2" class="close-panel">ETC</a></p>
+
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+
+
+    <div class="popover popover-streetlist-actions">
+      <div class="popover-angle"></div>
+      <div class="popover-inner">
+        <div class="list-block">
+          <ul>
+            <li><a id="popover-streetlist-engage" href="#" class="list-button item-link">Engaged</a></li>
+            <li><a id="popover-streetlist-not-engage" href="#" class="list-button item-link">Not Engaged</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="views" class="views tabs toolbar-through">
+      <div id="view-1" class="view view-main tab active">
+        <div class="navbar">
+          <div class="navbar-inner">
+            
+            <div class="center sliding">JMP</div>
+            
+          </div>
+        </div>
+        <!-- Pages-->
+        <div class="pages">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index-1" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content" style="padding-top:40px;">
+              
+              <div class="page-content">
+              <div class="content-block-title">Dashboard</div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-25">Dashboard 1</div>
+                  <div class="col-25">Dashboard 2</div>
+                  <div class="col-25">Dashboard 3</div>
+                  <div class="col-25">Dashboard 4</div>
+                </div>
+              </div>
+              <div class="content-block-title">Projects</div>
+              <!-- <div class="content-block"> -->
+                <div class="list-block">
+                  <ul id="project-list">
+                    <li><a href="#" id="project" class="item-link open-panel">
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Central Bed</div>
+                          </div>
+                        </div></a></li>
+                        <li >
+                          <label id="project" class="label-radio item-content open-panel">
+
+                            <!-- Checked by default -->
+                            <input type="radio" name="my-radio" value="Books" >
+                            <div class="item-inner">
+                              <div class="item-title">Books</div>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="label-radio item-content">
+                            <!-- Checked by default -->
+                            <input type="radio" name="my-radio" value="Books" >
+                            <div class="item-inner">
+                              <div class="item-title">Books</div>
+                            </div>
+                          </label>
+                         </li>
+                  </ul>
+                </div>
+
+              <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="view-2" class="view tab">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+            </div>
+            <div class="center sliding" id="view-2-header"></div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+
+          <!-- <div data-page="index-2" class="page">
+
+            <div class="page-content" id="view-2-content">
+
+
+
+              <div id="view-2-table-streetlist-day-title" class="content-block-title" style="display: none;">
+                <h2>day</h2>
+              </div>
+              <div class="content-block">
+                <table id="view-2-table-streetlist-day-content" style="width:100%;">
+                  <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                  </tr>
+                  <tr>
+                    <td>Peter</td>
+                    <td>p><a href="#" data-popover=".popover-streetlist-actions" class="open-popover">Open Links Popover</a></p>
+                </td>
+                <tr>
+                </table>
+              </div>
+
+              <div id="view-2-table-streetlist-evening-title" class="content-block-title" style="display: none;">
+                <h2>Evening</h2>
+              </div>
+              <div class="content-block">
+                <table id="view-2-table-streetlist-evening-content" style="width:100%;">
+                </table>
+              </div>
+
+              <div id="view-2-table-streetlist-weekend-title" class="content-block-title" style="display: none;">
+                <h2>Weekend</h2>
+              </div>
+              <div class="content-block">
+                <table id="view-2-table-streetlist-weekend-content" style="width:100%;">
+                </table>
+              </div>
+
+              <div id="view-2-table-streetlist-complete-title" class="content-block-title" style="display: none;">
+                <h2>Complete</h2>
+              </div>
+              <div class="content-block">
+                <table id="view-2-table-streetlist-complete-content" style="width:100%;">
+                </table>
+              </div>
+
+              <div id="view-2-table-streetlist-other-title" class="content-block-title" style="display: none;">
+                <h2>Other</h2>
+              </div>
+              <div class="content-block">
+                <table id="view-2-table--streetlist-other-content" style="width:100%;">
+                </table>
+              </div>
+
+              <div class="list-block" >
+                <ul id="test1234">
+                  <li><a href="about.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">About Us</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="services.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Services</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+              
+            </div>
+          </div> -->
+          <div data-page="engage-not-form" class="page">
+            <div class="page-content">
+              <div class="content-block-title" style="padding-left:15px;padding-right:15px; margin:0px; margin-bottom:0px;">
+                <h3 style="float:left;">Save the following address as not engaged from categories below:</h3>
+              </div>
+              <div class="list-block inset">
+                <p><i class="icon ion-android-location size-24"></i> Mobile Home Rear Of, Dunedin, Harlington Road</p>
+                <form id="my-form2">
+                  <ul>
+                    
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Outcome</div>
+                          <div class="item-input">
+                            <select id="engage-not-outcome">
+                              <option value='none' number="0">Select an outcome</option>
+                              <option id="outcome-ats" value="ats" number="8" >(ATS) Already Travels Sustainably</option>
+                              <option id="outcome-npd" value="npd" number="9" >(NPD) Non-participant discussion held</option>
+                              <option id="outcome-np" value="np" number="2" >(NP) Non-participant</option>
+                              <option id="outcome-na" value="na" number="3" >(NA) Not applicable</option>
+                              <option id="outcome-sl" value="sl" number="6" >(SL) Smaple loss</option>
+                              <option id="outcome-nc" value="nc" number="5" >(NC) No contact after 3 attempts</option>
+                              <option id="outcome-nh" value="nh" number="10" >(NH) Not home</option>
+                              <option id="outcome-cb" value="cb" number="11" >(CB) Call back</option>
+                              <option id="outcome-ma" value="ma" number="4" >(MA) Made appointment</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <div id="outcome-ats" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">FIrst name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Your name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Last name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Telephone</div>
+                            <div class="item-input">
+                              <input type="tel" placeholder="Telephone">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+
+                    <div id="outcome-npd" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label"></div>
+                            <div class="item-input">
+                              <select>
+                                <option value="cb" number="21" >(H) Happy with current choices</option>
+                                <option value="ma" number="22" >(N) Alternative not good enough</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">FIrst name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="First name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Last name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Telephone</div>
+                            <div class="item-input">
+                              <input type="tel" placeholder="Telephone">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+                    
+                    <div id="outcome-np" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label"></div>
+                            <div class="item-input">
+                              <select>
+                                <option value="c" number="4" >(C) Not wishing to hold conversation</option>
+                                <option value="s" number="5" >(S) Does not support project</option>
+                                <option value="e" number="9" >(E) Non-English speaker</option>
+                                <option value="a" number="17" >(A) Aggressive/Hostile</option>
+                                <option value="o" number="10" >(O) Other</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">First name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="First name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Last name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Telephone</div>
+                            <div class="item-input">
+                              <input type="tel" placeholder="Telephone">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+
+                    <div id="outcome-na" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label"></div>
+                            <div class="item-input">
+                              <select>
+                                <option value="i" number="11" >(I) Immobile/Incapacitated</option>
+                                <option value="o" number="12" >(O) Other</option>
+                                <option value="e" number="9" >(E) Non-English speaker</option>
+                                <option value="a" number="17" >(A) Aggressive/Hostile</option>
+                                <option value="o" number="10" >(O) Other</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">First name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="First name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Last name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Telephone</div>
+                            <div class="item-input">
+                              <input type="tel" placeholder="Telephone">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+                    <div id="outcome-sl" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label"></div>
+                            <div class="item-input">
+                              <select>
+                                <option value="vd" number="" >(VD) Vacant dwelling</option>
+                                <option value="li" number="" >(LI) Listed incorrectly</option>
+                                <option value="d" number="" >(D) Demolished</option>
+                                <option value="o" number="" >(O) Other</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+
+                    <div id="outcome-ma" style="display:none">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">First name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="First name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" placeholder="Last name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Telephone</div>
+                            <div class="item-input">
+                              <input type="tel" placeholder="Telephone">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Appointment Date</div>
+                            <div class="item-input">
+                              <input type="datetime-local">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </div>
+
+
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Advisor</div>
+                          <div class="item-input">
+                            <select>
+                              <option>Yourself</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Datetime of engagement</div>
+                          <div class="item-input">
+                            <input type="datetime-local">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Visits</div>
+                          <div class="item-input">
+                            <select>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </form>
+              </div>
+              <div class="row" style="padding-left:15px; padding-right:15px; padding-bottom:15px;">
+                <div class="col-50">
+                  <a href="#" class="button button-big button-cancel">Cancel</a>
+                </div>
+                <div class="col-50">
+                  <a id="endage-not-form-submit-btn" href="#" class="button button-big button-submit">Save & Exit</a>
+                </div>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+
+      <div class="toolbar tabbar tabbar-labels" id="toolbar">
+        <div class="toolbar-inner" id="toolbar2">
+          <a id="projectsTab" href="#view-1" class="tab-link active"><i class="icon ion-android-inbox size-24"></i><span class="tabbar-label">Projects  </span></a>
+          <a href="#view-2" class="tab-link"><i class="icon ion-android-location size-24"></i><span class="tabbar-label" id="view-2-tab-name">Street list</span></a>
+          <a href="#view-33" class="tab-link"><i class="icon ion-android-social size-24"></i><span class="tabbar-label">Individual</span></a>
+          <a href="#view-4" class="tab-link"><i class="icon ion-ios7-home size-24"></i><span class="tabbar-label">Households</span></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="../../dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/backend.js"></script>
+    <script type="text/javascript" src="js/view.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<!--[if IE 8 ]><html dir="ltr" lang="en" class="ie8 dark"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="en" class="ie9 dark"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="en" class="dark"><!--<![endif]--><head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=10">
+<meta http-equiv="content-language" content="en">
+<meta name="copyright" content="JMP Consultants Limited" />
+<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+<title>JMP PTP</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="icon" href="http://central-beds.ptp.jmpextra.net/assets/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://central-beds.ptp.jmpextra.net/assets/images/favicon.ico" type="image/x-icon">
+
+<link media="all" type="text/css" rel="stylesheet" href="css/jmp2.css">
+
+
+</head>
+<body class="view__project login">
+  <div class="page-container">
+
+    <div class="wrapper--content">
+
+      <div class="auth-page">
+
+  <div class="panel row--top">
+
+    <div class="block">
+
+      <div class="block__inner">
+
+        <div class="text--center push-half--top push-half--bottom">
+          <img src="img/logo-yellow.png" alt="JMP PTP" class="logo-pull" >
+        </div>
+
+        <div class="alert alert--note text--center">
+          <b>Central Beds</b>
+        </div>
+
+        <div class="row--top">
+
+          
+          <div class="form--vertical form--clear-stacked">
+            <!-- <input name="_token" typemethod="hidden" value="RJCNpFjiKzjodMCbbfg7UjqCAIKYC4VDlFMsf6R3"> -->
+
+            <input name="project" type="hidden">
+
+            <div class="form__group form__group--merge form__group--orange"><input id="email" placeholder="Email" name="email" type="text" value=""></div>
+            <div class="form__group form__group--merge form__group--orange"><input id="password" placeholder="Password" name="password" type="password" value=""></div>
+            <div class="form__group row--top no-bt no-bb no-bl no-br flush--bottom">
+
+              <button id="submitBtn" class="btn btn btn--large btn--full">Submit</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row--top">
+  <p class="color--white">&copy; JMP 2014&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://central-beds.ptp.jmpextra.net/support" class="color--alt">Support</a></p>
+</div>
+  </div>
+
+</div>
+
+
+    </div>
+
+  </div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+
+  </script>
+  <script type="text/javascript">
+      document.addEventListener("deviceready", onDeviceReady, false);
+            
+
+      function onDeviceReady() {
+          // check user token
+          if (window.localStorage.getItem('token') != null && window.localStorage.getItem('user_id') != null) {
+            location.replace("index.html");
+          }
+
+          $("#submitBtn").click(function(){
+            var email = $("#email").val();
+            var password = $("#password").val();
+
+            $.ajax({ type: "POST",   
+                 contentType: "application/json",
+                 url: "http://api.ptp.jmpextra.net/auth",
+                 data: '{"username": "' + "jarana@jmp.net" + '", "password" : "' + "uzrIoA3JmW" + '"}',
+                 success : function(data)
+                 {
+
+                    var token = data.token
+                    var user_id = data.user.id;
+                    window.localStorage.setItem('token', token);
+                    window.localStorage.setItem('user_id', user_id);
+                    location.replace("index.html");
+                 },
+                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                  // no streetlist
+                       console.log(JSON.stringify(XMLHttpRequest)+" "+textStatus+" "+errorThrown);
+
+                 } 
+              });
+            
+
+
+
+
+          })
+      }
+      
+  </script>
+
+
+</body><!-- # Closing # -->
+</html>
